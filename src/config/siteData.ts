@@ -4,7 +4,7 @@
 
 export const siteData = {
   personName: "Даниил",
-  date: "24.07.2026",
+  date: "24.07.2003",
 
   // ---------- Экран 1: Приветствие ----------
   welcome: {
