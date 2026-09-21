@@ -30,7 +30,7 @@ export const siteData = {
     subtitle: "Немного тепла из нашей истории",
     photos: [
       {
-        image: "/photos/photo_2024-05-05_10-09-18.jpg",
+        image: "https://github.com/dan593926-eng/birthday-site/blob/main/public/photos/photo_2024-05-05_10-09-18.jpg",
         title: "Наш момент",
         text: "Здесь можно написать короткое воспоминание об этом дне.",
       },
