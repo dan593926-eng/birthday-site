@@ -35,12 +35,12 @@ export const siteData = {
         text: "Здесь можно написать короткое воспоминание об этом дне.",
       },
       {
-        image: "/photos/photo2.jpg",
+        image: "photos/photo2.jpg",
         title: "Ещё один момент",
         text: "Маленькая история, связанная с этой фотографией.",
       },
       {
-        image: "/photos/photo3.jpg",
+        image: "photos/photo3.jpg",
         title: "Особенный день",
         text: "Опишите, что делает этот момент особенным.",
       },
