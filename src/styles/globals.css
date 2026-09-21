@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f0f14;
+  --surface: #17171f;
+  --primary: #d8a7b1;
+  --secondary: #ffffff;
+  --accent: #ff6b81;
+  --muted: #9a94a3;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #1a1622 0%, var(--bg) 60%);
+  color: var(--secondary);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(216, 167, 177, 0.35);
+  border-radius: 999px;
+}
+
+.font-serif-display {
+  font-family: "Playfair Display", "Cormorant Garamond", serif;
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(216, 167, 177, 0.35);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
