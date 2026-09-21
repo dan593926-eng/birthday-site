@@ -30,7 +30,7 @@ export const siteData = {
     subtitle: "Немного тепла из нашей истории",
     photos: [
       {
-        image: "/photos/photo1.jpg",
+        image: "photos/photo1.jpg",
         title: "Наш момент",
         text: "Здесь можно написать короткое воспоминание об этом дне.",
       },
@@ -40,12 +40,12 @@ export const siteData = {
         text: "Маленькая история, связанная с этой фотографией.",
       },
       {
-        image: "photos/photo3.jpg",
+        image: "photos/photo3.png",
         title: "Особенный день",
         text: "Опишите, что делает этот момент особенным.",
       },
       {
-        image: "/photos/photo4.jpg",
+        image: "photos/photo4.png",
         title: "Тёплые воспоминания",
         text: "Ещё немного тёплых слов об этом кадре.",
       },
