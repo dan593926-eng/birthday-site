@@ -10,6 +10,7 @@ import Finale from "./pages/Finale";
 import ProgressIndicator from "./components/ProgressIndicator";
 import MusicPlayer from "./components/MusicPlayer";
 import Particles from "./components/Particles";
+import CursorGlow from "./components/CursorGlow";
 import { siteData } from "./config/siteData";
 
 const PAGES = ["welcome", "message", "gallery", "memories", "messages", "finale"] as const;
@@ -60,6 +61,7 @@ export default function App() {
   return (
     <div className="relative w-full min-h-[100dvh]">
       {siteData.features.particles && <Particles />}
+      <CursorGlow />
 
       {siteData.settings.showProgress && step > 0 && (
         <ProgressIndicator current={step} total={PAGES.length} />
