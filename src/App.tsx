@@ -59,8 +59,13 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-full min-h-[100dvh]">
-      {siteData.features.particles && <Particles />}
+    <div className="relative w-full min-h-[100svh] min-h-[100dvh] overflow-x-clip">
+      {siteData.features.particles && (
+        <Particles
+          count={siteData.settings.desktopParticles}
+          mobileCount={siteData.settings.mobileParticles}
+        />
+      )}
       <CursorGlow />
 
       {siteData.settings.showProgress && step > 0 && (
@@ -70,7 +75,7 @@ export default function App() {
       {siteData.settings.showNavigation && step > 0 && step < PAGES.length - 1 && (
         <button
           onClick={goBack}
-          className="fixed top-5 left-5 z-40 w-10 h-10 rounded-full card-glass flex items-center justify-center text-white/70 hover:text-white transition-colors"
+          className="fixed top-[calc(0.75rem+env(safe-area-inset-top))] left-[calc(0.75rem+env(safe-area-inset-left))] z-40 w-11 h-11 rounded-full card-glass flex items-center justify-center text-white/70 hover:text-white transition-colors touch-manipulation"
           aria-label="Назад"
         >
           <ChevronLeft size={20} />
@@ -88,7 +93,7 @@ export default function App() {
           animate="center"
           exit="exit"
           transition={{ duration: 0.55 / speed, ease: "easeInOut" }}
-          className="relative z-20"
+          className="relative z-20 w-full overflow-x-clip"
         >
           {renderPage()}
         </motion.div>

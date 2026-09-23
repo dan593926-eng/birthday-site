@@ -32,7 +32,7 @@ src/config/siteData.ts
 ## Как добавить фотографии
 
 1. Положите файлы в `public/photos/` (jpg, jpeg, png, webp).
-2. Укажите их имена в `siteData.ts`, например `"/photos/photo1.jpg"`.
+2. Укажите их имена в `siteData.ts`, например `"photos/photo1.jpg"`.
 
 ## Как добавить музыку
 
@@ -109,3 +109,20 @@ public/
   перетаскиваете снимок.
 - Через 1–2 минуты после сохранения сайт по ссылке обновится сам — GitHub Actions
   соберёт и опубликует новую версию автоматически. Ничего запускать не нужно.
+
+
+## Mobile-Optimierung
+
+Die aktuelle Version ist für Smartphones und Tablets optimiert:
+
+- Responsive Breakpoints für kleine Smartphones ab ca. 320 px, Tablets und Desktop.
+- Safe-Area-Unterstützung für iPhone-Notch/Home-Indicator.
+- Buttons und Navigation mit mindestens 44 px Touch-Fläche.
+- Galerie und Nachrichten wechseln auf sehr kleinen Displays automatisch auf eine Spalte.
+- Lightbox unterstützt Wischen nach links/rechts sowie `Escape` und Pfeiltasten.
+- Cursor-Glow wird auf Touch-Geräten nicht verwendet.
+- Partikel werden auf mobilen Geräten reduziert, um Akku und GPU zu schonen.
+- Unterstützung für `prefers-reduced-motion`.
+- `100svh`/`100dvh` für moderne mobile Browser.
+- Keine horizontale Seitenverschiebung durch Animationen.
+- Bilder werden möglichst spät geladen und bleiben responsiv.

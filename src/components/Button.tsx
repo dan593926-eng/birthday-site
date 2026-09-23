@@ -19,7 +19,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "relative inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-medium text-sm md:text-base tracking-wide transition-colors duration-300 select-none";
+    "relative inline-flex items-center gap-2 min-h-11 min-w-11 px-6 sm:px-8 py-3.5 rounded-full font-medium text-sm md:text-base tracking-wide transition-colors duration-300 select-none";
 
   const styles =
     variant === "primary"
@@ -32,7 +32,7 @@ export default function Button({
       whileHover={{ scale: 1.04, y: -2 }}
       whileTap={{ scale: 0.97 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      className={`${base} ${styles} ${className}`}
+      className={`${base} touch-manipulation ${styles} ${className}`}
     >
       {icon && iconPosition === "left" && icon}
       <span>{children}</span>

@@ -50,10 +50,10 @@ function PolaroidCard({
       whileInView={{ opacity: 1, y: 0, rotate: baseTilt, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
-      whileHover={{ scale: 1.06, rotate: 0, zIndex: 10 }}
+      whileHover={{ scale: 1.04, rotate: 0, zIndex: 10 }}
       whileTap={{ scale: 0.97 }}
       style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d", transformPerspective: 800 }}
-      className="group relative text-left bg-[#fdfaf6] p-3 pb-10 rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+      className="group relative text-left touch-manipulation bg-[#fdfaf6] p-3 pb-10 rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
     >
       <div className="relative aspect-[3/4] overflow-hidden">
         <img
@@ -77,7 +77,7 @@ function PolaroidCard({
 export default function PhotoGallery({ photos, onSelect }: PhotoGalleryProps) {
   return (
     <div
-      className="grid grid-cols-2 gap-6 md:gap-8 w-full max-w-3xl mx-auto"
+      className="grid grid-cols-1 min-[390px]:grid-cols-2 gap-5 sm:gap-6 md:gap-8 w-full max-w-3xl mx-auto px-2 sm:px-0"
       style={{ perspective: 1000 }}
     >
       {photos.map((photo, i) => (

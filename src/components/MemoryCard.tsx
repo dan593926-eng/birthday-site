@@ -21,9 +21,9 @@ export default function MemoryCard({ question, image, text, index }: MemoryCardP
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onClick={() => setOpen(!open)}
       whileHover={{ y: -4 }}
-      className="cursor-pointer card-glass rounded-2xl overflow-hidden w-full"
+      className="cursor-pointer touch-manipulation card-glass rounded-2xl overflow-hidden w-full"
     >
-      <div className="p-5 md:p-6 flex items-center justify-between gap-3">
+      <div className="p-4 sm:p-5 md:p-6 flex items-center justify-between gap-3">
         <span className="font-serif-display text-lg md:text-xl text-white">{question}</span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}

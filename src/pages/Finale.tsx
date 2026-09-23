@@ -93,7 +93,7 @@ export default function Finale() {
   };
 
   return (
-    <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
+    <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center px-4 sm:px-6 py-20 sm:py-24 overflow-hidden">
       <Starfield />
       {siteData.features.petals && <Petals />}
       {showConfetti && <Confetti />}
@@ -109,7 +109,7 @@ export default function Finale() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative flex flex-col items-center text-center max-w-xl"
+        className="relative flex flex-col items-center text-center max-w-xl w-full px-2"
       >
         <motion.button
           onClick={handleHeartTap}
@@ -120,10 +120,10 @@ export default function Finale() {
           className="mb-6 text-[var(--accent)] cursor-pointer"
           aria-label="Нажми несколько раз"
         >
-          <Heart size={40} fill="currentColor" />
+          <Heart size={36} fill="currentColor" />
         </motion.button>
 
-        <h1 className="font-serif-display italic text-4xl sm:text-5xl md:text-7xl text-white text-glow mb-6 overflow-hidden">
+        <h1 className="font-serif-display italic text-[clamp(2.25rem,11vw,3rem)] sm:text-5xl md:text-7xl text-white text-glow mb-6 overflow-hidden">
           <span className="inline-block animate-ink">{siteData.final.title}</span>
         </h1>
 
@@ -131,7 +131,7 @@ export default function Finale() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.9 }}
-          className="text-white/60 text-sm md:text-lg font-light leading-relaxed mb-10"
+          className="text-white/60 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-10"
         >
           {siteData.final.text}
         </motion.p>
@@ -151,7 +151,7 @@ export default function Finale() {
               initial={{ opacity: 0, y: 16, height: 0 }}
               animate={{ opacity: 1, y: 0, height: "auto" }}
               transition={{ duration: 0.7 }}
-              className="mt-8 card-glass rounded-2xl px-6 py-5 max-w-md"
+              className="mt-8 card-glass rounded-2xl px-6 py-5 max-w-md w-full"
             >
               <p className="text-[11px] tracking-[0.25em] uppercase text-[var(--primary)] mb-2">
                 Секретное послание

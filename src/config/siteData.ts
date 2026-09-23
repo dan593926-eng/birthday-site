@@ -2,6 +2,9 @@
 //  ВСЕ РЕДАКТИРУЕМЫЕ ДАННЫЕ САЙТА — МЕНЯЙТЕ ТОЛЬКО ЗДЕСЬ
 // ============================================================
 
+const asset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const siteData = {
   personName: "Даниил",
   date: "24.07.2003",
@@ -30,22 +33,22 @@ export const siteData = {
     subtitle: "Немного тепла из нашей истории",
     photos: [
       {
-        image: "photos/photo1.jpg",
+        image: asset("photos/photo1.jpg"),
         title: "Наш момент",
         text: "Здесь можно написать короткое воспоминание об этом дне.",
       },
       {
-        image: "photos/photo2.jpg",
+        image: asset("photos/photo2.jpg"),
         title: "Ещё один момент",
         text: "Маленькая история, связанная с этой фотографией.",
       },
       {
-        image: "photos/photo3.png",
+        image: asset("photos/photo3.png"),
         title: "Особенный день",
         text: "Опишите, что делает этот момент особенным.",
       },
       {
-        image: "photos/photo4.png",
+        image: asset("photos/photo4.png"),
         title: "Тёплые воспоминания",
         text: "Ещё немного тёплых слов об этом кадре.",
       },
@@ -60,17 +63,17 @@ export const siteData = {
     cards: [
       {
         question: "Помнишь этот день?",
-        image: "/photos/photo1.jpg",
+        image: asset("photos/photo1.jpg"),
         text: "Расскажите короткую тёплую историю об этом воспоминании.",
       },
       {
         question: "А этот момент?",
-        image: "/photos/photo2.jpg",
+        image: asset("photos/photo2.jpg"),
         text: "Ещё одна история — то, что сделало этот день особенным.",
       },
       {
         question: "Узнаёшь это место?",
-        image: "/photos/photo3.jpg",
+        image: asset("photos/photo3.png"),
         text: "Небольшое воспоминание, связанное с этим местом.",
       },
     ],
@@ -102,7 +105,7 @@ export const siteData = {
   // ---------- Музыка ----------
   music: {
     enabled: false,
-    src: "/music/background.mp3",
+    src: asset("music/background.mp3"),
     volume: 0.25,
   },
 
@@ -131,6 +134,9 @@ export const siteData = {
     showNavigation: true,
     showProgress: true,
     animationSpeed: 1,
+    // Производительность на мобильных устройствах
+    mobileParticles: 10,
+    desktopParticles: 22,
   },
 };
 

@@ -43,7 +43,7 @@ export default function MusicPlayer({ started }: MusicPlayerProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full card-glass flex items-center justify-center text-white/80 hover:text-white transition-colors"
+        className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] right-[calc(0.75rem+env(safe-area-inset-right))] z-40 w-11 h-11 touch-manipulation rounded-full card-glass flex items-center justify-center text-white/80 hover:text-white transition-colors"
         aria-label={playing ? "Выключить музыку" : "Включить музыку"}
       >
         {playing ? <Volume2 size={18} /> : <VolumeX size={18} />}
