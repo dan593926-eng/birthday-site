@@ -43,12 +43,12 @@ export const siteData = {
         text: "Янник в роли фехтовальщика",
       },
       {
-        image: asset("photos/photo3.png"),
+        image: asset("photos/photo3.jpg"),
         title: "Первый Новый год вместе",
         text: "Решили культурно отметить Новый год, но всё получилось как всегда :)",
       },
       {
-        image: asset("photos/photo4.png"),
+        image: asset("photos/photo4.jpg"),
         title: "Общая поездка на концерт",
         text: "Это было наша общая поездка на Rammstein, она особенно отложилось у меня в голове, так как раньше даже представить себе такого не мог",
       },
