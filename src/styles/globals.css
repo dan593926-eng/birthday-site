@@ -74,6 +74,36 @@ body {
   scrollbar-width: none;
 }
 
+/* Мягкое свечение без filter: blur — радиальный градиент почти бесплатен для GPU */
+.glow-blob {
+  pointer-events: none;
+  border-radius: 9999px;
+  will-change: transform, opacity;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 0.6;
+  }
+}
+.animate-drift {
+  opacity: 0.15;
+  animation: drift ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-fall,
+.animate-rise,
+.animate-twinkle {
+  will-change: transform, opacity;
+}
+
 @keyframes heart-pop {
   0% {
     transform: translate(-50%, -50%) scale(0.4);
@@ -155,19 +185,17 @@ img {
   max-width: 100%;
 }
 
-@media (hover: none), (pointer: coarse) {
+/* На телефонах backdrop-filter — главный тормоз: размытие пересчитывается
+   каждый кадр, пока под карточкой что-то анимируется. Заменяем на плотный фон. */
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
   .card-glass {
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(28, 25, 34, 0.88);
   }
-}
 
-@media (max-width: 389px) {
   .text-glow {
-    text-shadow: 0 0 24px rgba(216, 167, 177, 0.28);
-  }
-
-  .card-glass {
-    backdrop-filter: blur(8px);
+    text-shadow: 0 0 20px rgba(216, 167, 177, 0.28);
   }
 }
 

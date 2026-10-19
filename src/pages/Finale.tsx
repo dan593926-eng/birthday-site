@@ -4,11 +4,14 @@ import { Heart } from "lucide-react";
 import { siteData } from "../config/siteData";
 import Confetti from "../components/Confetti";
 import Petals from "../components/Petals";
+import { getIsMobile } from "../hooks/useIsMobile";
+
+const MOBILE = getIsMobile();
 
 function Starfield() {
   const stars = useMemo(
     () =>
-      Array.from({ length: 45 }).map((_, i) => ({
+      Array.from({ length: MOBILE ? 20 : 45 }).map((_, i) => ({
         id: i,
         left: Math.random() * 100,
         top: Math.random() * 60,
@@ -41,7 +44,7 @@ function Starfield() {
 function RisingHearts({ active }: { active: boolean }) {
   const hearts = useMemo(
     () =>
-      Array.from({ length: 16 }).map((_, i) => ({
+      Array.from({ length: MOBILE ? 8 : 16 }).map((_, i) => ({
         id: i,
         left: Math.random() * 100,
         duration: Math.random() * 4 + 5,
@@ -95,12 +98,13 @@ export default function Finale() {
   return (
     <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center px-4 sm:px-6 py-20 sm:py-24 overflow-hidden">
       <Starfield />
-      {siteData.features.petals && <Petals />}
-      {showConfetti && <Confetti />}
+      {siteData.features.petals && <Petals count={MOBILE ? 7 : 14} />}
+      {showConfetti && <Confetti count={MOBILE ? 22 : 40} />}
       <RisingHearts active={true} />
 
       <motion.div
-        className="absolute w-[320px] h-[320px] md:w-[520px] md:h-[520px] rounded-full bg-[var(--accent)]/15 blur-[100px]"
+        className="glow-blob absolute w-[460px] h-[460px] md:w-[760px] md:h-[760px]"
+        style={{ background: "radial-gradient(circle, rgba(255,107,129,0.22) 0%, rgba(255,107,129,0.08) 35%, transparent 68%)" }}
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />

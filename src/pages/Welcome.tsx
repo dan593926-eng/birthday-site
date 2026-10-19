@@ -11,7 +11,8 @@ export default function Welcome({ onNext }: WelcomeProps) {
   return (
     <div className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center px-4 sm:px-6 text-center">
       <motion.div
-        className="absolute w-[280px] h-[280px] md:w-[420px] md:h-[420px] rounded-full bg-[var(--primary)]/20 blur-[90px]"
+        className="glow-blob absolute w-[420px] h-[420px] md:w-[640px] md:h-[640px]"
+        style={{ background: "radial-gradient(circle, rgba(216,167,177,0.32) 0%, rgba(216,167,177,0.12) 35%, transparent 68%)" }}
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.6, 0.4] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />

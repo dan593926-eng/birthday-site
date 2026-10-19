@@ -14,7 +14,6 @@ export default function MemoryCard({ question, image, text, index }: MemoryCardP
 
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -46,6 +45,8 @@ export default function MemoryCard({ question, image, text, index }: MemoryCardP
               <img
                 src={image}
                 alt={question}
+                loading="lazy"
+                decoding="async"
                 className="w-full sm:w-40 h-40 object-cover rounded-xl shrink-0"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).style.display = "none";
